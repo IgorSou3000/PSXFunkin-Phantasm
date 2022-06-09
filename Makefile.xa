@@ -1,0 +1,13 @@
+all: \
+  iso/music/menu.xa \
+  iso/music/week1a.xa \
+
+# XA converts
+iso/music/%.xa: iso/music/%.ogg
+	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@
+iso/music/%.xa:
+	tools/xainterleave/xainterleave $@
+
+# XA interleaves
+iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
+iso/music/week1a.xa: iso/music/bopeeboi.xa iso/music/bopeebov.xa iso/music/freshi.xa iso/music/freshv.xa

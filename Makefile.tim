@@ -1,0 +1,38 @@
+all: \
+	iso/menu/menu.arc \
+	iso/menu/loading.tim \
+	iso/menu/loadran.tim \
+	iso/font/boldfont.tim \
+	iso/font/arial.tim \
+	iso/font/cdr.tim \
+	iso/stage/hud0.tim \
+	iso/stage/hud1.tim \
+	iso/stage/hud1menu.tim \
+	iso/stage/hud0weeb.tim \
+	iso/sonic/main.arc \
+	iso/sonic2p/main.arc \
+	iso/sonicm/main.arc \
+	iso/monika/main.arc \
+	iso/monika2p/main.arc \
+	iso/week1/back.arc \
+	iso/week1/vin.arc \
+
+iso/%.tim: iso/%.png
+	tools/funkintimconv/funkintimconv $@ $<
+
+iso/%.arc:
+	tools/funkinarcpak/funkinarcpak $@ $^
+
+# Menu
+iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/crediti.tim
+
+# Sonic and Fleetway
+iso/sonic/main.arc: iso/sonic/sonic0.tim iso/sonic/sonic1.tim iso/sonic/sonic2.tim iso/sonic/sonic3.tim iso/sonic/sonic4.tim iso/sonic/sonic5.tim iso/sonic/sonic6.tim iso/sonic/fleet0.tim iso/sonic/fleet1.tim iso/sonic/fleet2.tim iso/sonic/fleet3.tim iso/sonic/fleet4.tim iso/sonic/fleet5.tim iso/sonic/fleet6.tim iso/sonic/fleet7.tim iso/sonic/fleet8.tim iso/sonic/fleet9.tim iso/sonic/fleet10.tim iso/sonic/death.tim
+iso/sonic2p/main.arc: iso/sonic2p/fleet0.tim iso/sonic2p/fleet1.tim iso/sonic2p/fleet2.tim iso/sonic2p/fleet3.tim iso/sonic2p/fleet4.tim iso/sonic2p/fleet5.tim iso/sonic2p/fleet6.tim iso/sonic2p/fleet7.tim iso/sonic2p/fleet8.tim iso/sonic2p/fleet9.tim iso/sonic2p/fleet10.tim
+
+# Monika and Lunatic
+iso/monika/main.arc: iso/monika/monika0.tim iso/monika/monika1.tim iso/monika/monika2.tim iso/monika/monika3.tim iso/monika/monika4.tim iso/monika/monika5.tim iso/monika/monika6.tim iso/monika/monika7.tim iso/monika/monika8.tim iso/monika/monika9.tim iso/monika/monika10.tim iso/monika/lunatic0.tim iso/monika/lunatic1.tim iso/monika/lunatic2.tim iso/monika/lunatic3.tim iso/monika/lunatic4.tim iso/monika/lunatic5.tim iso/monika/lunatic6.tim iso/monika/lunatic7.tim iso/monika/lunatic8.tim iso/monika/lunatic9.tim iso/monika/luna10.tim iso/monika/luna11.tim iso/monika/luna12.tim
+iso/monika2p/main.arc: iso/monika2p/lunatic0.tim iso/monika2p/lunatic1.tim iso/monika2p/lunatic2.tim iso/monika2p/lunatic3.tim iso/monika2p/lunatic4.tim iso/monika2p/lunatic5.tim iso/monika2p/lunatic6.tim iso/monika2p/lunatic7.tim iso/monika2p/lunatic8.tim iso/monika2p/lunatic9.tim iso/monika2p/luna10.tim iso/monika2p/luna11.tim iso/monika2p/luna12.tim
+
+# Week 1
+iso/week1/back.arc: iso/week1/back0.tim
